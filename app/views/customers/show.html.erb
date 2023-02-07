@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= turbo_frame_tag 'customer_detail' do %>
+  <%= render @customer %>
+  <%= link_to "Edit1 this customer", edit_customer_path(@customer), data: { turbo_frame: 'customer_detail' } %> |
+  <%= button_to "Destroy this customer", @customer, method: :delete %>
+<% end %>
+
+<div>
+  <%= link_to "Back to customers", customers_path %>
+
+</div>

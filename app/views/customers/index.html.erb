@@ -1,0 +1,19 @@
+<p id="flash" style="color: green"><%= notice %></p>
+
+<div class="row">
+  <div class="col-6">
+    <h1>Customers</h1>
+
+    <div id="customers">
+      <% @customers.each do |customer| %>
+        <%= render 'index_row', customer: customer %>
+      <% end %>
+    </div>
+
+    <%= link_to "New customer", new_customer_path %>
+  </div>
+  <div class="col-6">
+    <%= turbo_frame_tag 'customer_detail' %>
+  </div>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="card" id="<%= dom_id(customer) %>">
+  <div class="card-body">
+    <p>
+      <strong>Name:</strong>
+      <%= customer.name %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= customer.email %>
+    </p>
+  </div>
+</div>
+
+<p>
+  <%= link_to "Show this customer", customer, data: { turbo_frame: 'customer_detail' } %>
+</p>

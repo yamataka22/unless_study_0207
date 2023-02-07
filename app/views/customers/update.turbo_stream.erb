@@ -1,0 +1,18 @@
+<% if @customer.errors.present? %>
+
+<% else %>
+  <% # 一覧の行の差し替え %>
+  <%= turbo_stream.replace @customer do %>
+    <%= render 'index_row', customer: @customer %>
+  <% end %>
+
+  <% # 詳細フレームの差し替え %>
+  <%= turbo_stream.update 'customer_detail' do %>
+    <%= render @customer %>
+  <% end %>
+<% end %>
+
+<% # フラッシュメッセージ設定 %>
+<%= turbo_stream.update 'flash' do %>
+  <%= notice %>
+<% end %>

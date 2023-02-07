@@ -1,0 +1,11 @@
+<h1>Editing customer</h1>
+
+<%= turbo_frame_tag 'customer_detail' do %>
+  <%= render "form", customer: @customer %>
+  <%= link_to "Show this customer", @customer %> |
+<% end %>
+<br>
+
+<div>
+  <%= link_to "Back to customers", customers_path %>
+</div>
